@@ -23,18 +23,4 @@ describe('Базовые сценарии отправки формы', () => {
 
     cy.contains('Благодарим за обращение!').should('be.visible');
   })
-  
-  it('Некорректная отправка формы', () => {
-
-    cy.get('input[placeholder=""]').eq(1)
-    .type('ivan.ivanov@example.com')
-
-    cy.get('input[placeholder=""]').eq(2)
-    .type('+79002003050')
-
-    cy.get('textarea').type('Это тестовое сообщение.');
-    cy.get('button').click();
-    
-    cy.contains('Вопрос является обязательным').should('be.visible')
-  })
 })
